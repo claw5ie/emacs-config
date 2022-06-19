@@ -4,7 +4,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; Set default font
-(set-face-attribute 'default nil :font "Share Tech Mono-13")
+(set-face-attribute 'default nil :height 130 :font "Share Tech Mono")
 
 (put 'dired-find-alternate-file 'disabled nil)
 
@@ -20,7 +20,8 @@
  c-default-style "linux" ;; Set C indentation style
  ;; display-fill-column-indicator-column 80 ;; Set column indicator to 80-th column
  cursor-type 'box        ;; Set cursor type
- word-wrap t)            ;; Wrap by words at the end of the line
+ word-wrap t             ;; Wrap by words at the end of the line
+ ido-auto-merge-work-directories-length -1) ;; Disable automatic file search for ido mode
 
 (setq
  backup-directory-alist '(("." . "~/.emacs.d/backups")) ;; Set backup directory (files ending with ~)
