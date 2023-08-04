@@ -10,8 +10,6 @@
 ;; -------------------------------------------------------
 (set-face-attribute 'default 'nil :height 145 :family "Apl385 Unicode")
 
-(set-face-bold-p 'bold nil) ;; Don't use bold font. If the selected font doesn't have bold variant, some visual glitches will appear on text that uses (non-existing) bold variant of font.
-
 ;; Start emacs in fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -58,3 +56,5 @@
 (global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c i") 'windmove-up)
 (global-set-key (kbd "C-c k") 'windmove-down)
+
+(set-face-bold-p 'bold nil) ;; Don't use bold font. If the selected font doesn't have bold variant, some visual glitches will appear on text that uses (non-existing) bold variant of font.
