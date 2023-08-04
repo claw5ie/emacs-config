@@ -3,11 +3,14 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
-;; Set default font
-;; Font test: ~!@#$%^&*()_+-=[]'\,./{}"|<>?
-(set-face-attribute 'default 'nil :height 140 :family "Iosevka Slab")
-
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Set default font
+;; Font test: ~!@#$%^&*()_+-=[]'\,./{}"|<>?1234567890oOlLiI
+;; -------------------------------------------------------
+(set-face-attribute 'default 'nil :height 145 :family "Apl385 Unicode")
+
+(set-face-bold-p 'bold nil) ;; Don't use bold font. If the selected font doesn't have bold variant, some visual glitches will appear on text that uses (non-existing) bold variant of font.
 
 ;; Start emacs in fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -48,6 +51,7 @@
 
 ;; Change the style of C comments from "/*" to "//".
 (add-hook 'c-mode-hook (lambda () (c-toggle-comment-style)))
+(add-hook 'asm-mode-hook (lambda () (nasm-mode)))
 
 ;; Custom keybindings
 (global-set-key (kbd "C-c j") 'windmove-left)
